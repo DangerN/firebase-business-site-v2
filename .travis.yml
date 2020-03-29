@@ -6,6 +6,5 @@ script:
   - npm i
   - cd ..
   - "echo 'this is not a test'"
-deploy:
-  provider: firebase
-  edge: true
+  - npm i firebase-tools -g
+  - firebase deploy --token "$FIREBASE_TOKEN" --non-interactive
