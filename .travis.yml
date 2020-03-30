@@ -18,14 +18,14 @@ cache:
 install:
   - cd ./functions && npm i
   - cd ../front && npm i
-
+  - cd ..
 
 jobs:
   include:
-    stages:
-    - name: test
-      script: echo 'test one'
-      script: echo 'test two'
+    stage: test
+      script:
+      - echo 'test one'
+      - echo 'test two'
     - name: build
       script: echo 'maaster brunch!!1'
 
