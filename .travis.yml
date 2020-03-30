@@ -1,10 +1,16 @@
 language: node_js
 node_js:
   - "node"
+cache:
+  directories:
+    - /front/node_modules
+    - /functions/node_modules
 script:
   - cd ./functions
   - npm i
-  - cd ..
+  - cd ../front
+  - npm i
+  - npm run build
   - "echo 'this is not a test'"
   - npm i firebase-tools -g
   - firebase deploy --token "$FIREBASE_TOKEN" --non-interactive
