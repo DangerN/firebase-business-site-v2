@@ -26,10 +26,10 @@ jobs:
       script:
       - echo 'test one'
       - echo 'test two'
-    - name: build
+    stage: build
       script: echo 'maaster brunch!!1'
 
-      if: branch = master
+    # if: branch = master
 
 # stages:
 #   - name: test
