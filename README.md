@@ -1,1 +1,3 @@
-# firebase-business-site-v2
+# Business Site
+
+A serverless business site for Firebase.
