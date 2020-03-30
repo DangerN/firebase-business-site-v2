@@ -5,12 +5,30 @@ cache:
   directories:
     - /front/node_modules
     - /functions/node_modules
-script:
-  - cd ./functions
-  - npm i
-  - cd ../front
-  - npm i
-  - npm run build
-  - "echo 'this is not a test'"
-  - npm i firebase-tools -g
-  - firebase deploy --token "$FIREBASE_TOKEN" --non-interactive
+# script:
+#   - cd ./functions
+#   - npm i
+#   - cd ../front
+#   - npm i
+#   - npm run build
+#   - "echo 'this is not a test'"
+#   - npm i firebase-tools -g
+#   - firebase deploy --token "$FIREBASE_TOKEN" --non-interactive
+
+stages:
+  - name: test
+    script:
+      - cd ./functions
+      - npm i
+      - cd ../front
+      - npm i
+      - cd ..
+  - name: build
+    script:
+      - "echo 'this is not a test'"
+    if: branch = master
+  - name: deploy
+    script:
+      - npm i firebase-tools -g
+      - firebase deploy --token "$FIREBASE_TOKEN" --non-interactive
+    if: branch = master
