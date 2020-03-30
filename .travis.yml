@@ -5,26 +5,16 @@ cache:
   directories:
     - /front/node_modules
     - /functions/node_modules
-# script:
-#   - cd ./functions
-#   - npm i
-#   - cd ../front
-#   - npm i
-#   - npm run build
-#   - "echo 'this is not a test'"
-#   - npm i firebase-tools -g
-#   - firebase deploy --token "$FIREBASE_TOKEN" --non-interactive
-
 install:
   - cd ./functions && npm i
   - cd ../front && npm i
   - cd ..
-
 jobs:
   include:
   - stage: test
     script:
     - echo "test one"
+    script:
     - echo "test two"
   - stage: build
     script:
