@@ -27,7 +27,8 @@ jobs:
       - echo 'test one'
       - echo 'test two'
     stage: build
-      script: echo 'maaster brunch!!1'
+      script:
+      - echo 'maaster brunch!!1'
 
     # if: branch = master
 
