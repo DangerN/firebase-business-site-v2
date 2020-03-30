@@ -22,10 +22,11 @@ install:
 
 jobs:
   include:
-    stage: test
+  - stage: test
     script:
     - echo "test one"
     - echo "test two"
-    stage: build
+  - stage: build
     script:
     - echo "maaster brunch!!1"
+    if: branch = master
