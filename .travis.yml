@@ -15,12 +15,17 @@ cache:
 #   - npm i firebase-tools -g
 #   - firebase deploy --token "$FIREBASE_TOKEN" --non-interactive
 
+install:
+  - cd ./functions && npm i
+  - cd ../front && npm i
+
+
 jobs:
   include:
     stages:
     - name: test
-      script: cd ./functions && npm i
-      script: cd ./front && npm i
+      script: echo 'test one'
+      script: echo 'test two'
     - name: build
       script: echo 'maaster brunch!!1'
 
