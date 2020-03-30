@@ -23,29 +23,9 @@ install:
 jobs:
   include:
     stage: test
-      script:
-      - echo 'test one'
-      - echo 'test two'
+    script:
+    - echo "test one"
+    - echo "test two"
     stage: build
-      script:
-      - echo 'maaster brunch!!1'
-
-    # if: branch = master
-
-# stages:
-#   - name: test
-#     script:
-#       - cd ./functions
-#       - npm i
-#       - cd ../front
-#       - npm i
-#       - cd ..
-#   - name: build
-#     script:
-#       - "echo 'this is not a test'"
-#     if: branch = master
-#   - name: deploy
-#     script:
-#       - npm i firebase-tools -g
-#       - firebase deploy --token "$FIREBASE_TOKEN" --non-interactive
-#     if: branch = master
+    script:
+    - echo "maaster brunch!!1"
