@@ -10,8 +10,4 @@ app.get('/sneed', (req, res) => {
   res.send('SNEEDS SNEED & SNEED FORMERLY SNEEDS')
 })
 
-const api = functions.https.onRequest(api)
-
-module.exports = {
-  api
-}
+exports.api = functions.https.onRequest(app)
